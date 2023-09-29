@@ -1,49 +1,70 @@
 //Global Variables
 int appWidth, appHeight;
-String title, footer;
+String title="WAHOO!!", footer="drip";
 PFont titleFont, footerFont;
-color purple=#D565F5, resetDefaultInk;
-int sizeFont;
-float xTitle , yTitle, widthTitle, heightTitle; 
-float xFooter , yFooter, widthFooter, heighFooter;
+color purple=#2C08FF, resetDefaultInk=#FFFFFF, yellow = #E9FF00;
+int sizeFont, size;
+float xTitle, yTitle, widthTitle, heightTitle;
+float xFooter, yFooter, widthFooter, heightFooter;
 //
 void setup() {
-  //fullscreen(); //displaywidth & displayheight
+  //fullScreen(); //displayWidth & displayHeight
   size(500, 600);
-  appWidth = width; 
+  appWidth = width;
   appHeight = height;
-  // 
-  // Population 
-  xTitile = appWidth*1/4;
-  yTitile = appHeigh*1/10;
+  //
+  // Population
+  xTitle = appWidth*1/4;
+  yTitle = appHeight*1/10;
   widthTitle = appWidth*1/2;
-  heightTitle = appHeigh*2/10;
-  xFooter = xTitile ;
-  yFooter = appHeigh*7/10;
+  heightTitle= appHeight*2/10;
+  xFooter = xTitle;
+  yFooter = appHeight*7/10;
   widthFooter = widthTitle;
-  heighFooter = heightTitle;
+  heightFooter = heightTitle;
   //
   // DIVs or rect()
-  //layout our text space typographical features
-  rect( xTitle , yTitle, widthTitle, heightTitle );
-  // rect( xFooter , yFooter, widthFooter, heighFooter );
-  //Text setup 
-  // Font form OS (Operating system)
-  String[] fontlist = PFont.list (); //lists all fonts available on OS
-  printArray(fontlist);
-  titleFont = createFont ("ArialIMT", 55); 
-  footerFont = createFont ("ArialIMT", 55); // Verify the font exists in procssesing.java 
-  //tools / Create Font / Find Font / do not click ok known bug. 
+  // Layout our text space and typographical features
+  rect( xTitle, yTitle, widthTitle, heightTitle );
+  rect( xFooter, yFooter, widthFooter, heightFooter );
   //
-} //End draw 
+  // Text Setup
+  // Fonts from OS (Operating System)
+  //String[] fontList = PFont.list(); //Lists all fonts available on OS
+  //printArray(fontList);
+  titleFont = createFont("Harrington", 55);
+  footerFont = createFont("ArialMT", 55); //Verify the font exists in Processing.Java
+  // Tools / Create Font / Find Font / Do not press "OK", known bug
+  //
+} //End setup
 //
 void draw() {
-  rect(xTitle, yTitle, widthTitle, heightTitle);//Title; WAHPP!!
-  //rect(xFooter, y, widthFooter, heightFooter);//Footer; drip
+  //Text is same size or relative to rect()
+  //
+  //Drawing Font Code
+  //
+  //CAUTION: review this tomorrow
+  fill(purple); //ink
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  size = 60;
+  //textFont(titleFont, size);
+  //text ( title, xTitle, yTitle, widthTitle, heightTitle );
+  fill(yellow); //ink
+  textAlign(CENTER, TOP); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  size = 120;
+  //textFont(footerFont, size);
+  //text ( footer, xFooter, yFooter, widthFooter, heightFooter );
+  fill(resetDefaultInk); //ink
+  //
+  //
+  //rect(  ); //Title: 
+  //rect(   ); //Footer: 
 } //End draw
 //
-void keyPressed() {} // End keyPressed 
-// 
-void mousePressed() {} // End mousePressed 
+void keyPressed() {} // End keyPressed
+//
+void mousePressed() {} //End mousePressed
 //
 //MAIN Program
