@@ -33,7 +33,7 @@ void setup() {
   //String[] fontList = PFont.list(); //Lists all fonts available on OS
   //printArray(fontList);
   titleFont = createFont("Harrington", 55);
-  footerFont = createFont("ArialMT", 55); //Verify the font exists in Processing.Java
+  footerFont = createFont("Algerian", 55); //Verify the font exists in Processing.Java
   // Tools / Create Font / Find Font / Do not press "OK", known bug
   //
 } //End setup
